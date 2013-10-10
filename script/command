@@ -1,0 +1,9 @@
+#!/bin/bash
+##./conn.py $1
+fab -i ~/.ssh/$1.pem getInstancesInfo:$1 downloadHDFS 
+fab -i ~/.ssh/$1.pem getInstancesInfo:$1 getHostNames configFiles
+fab -i ~/.ssh/$1.pem getInstancesInfo:$1 connectToMaster getPublicKey
+fab -i ~/.ssh/$1.pem getInstancesInfo:$1 addPublicKey
+fab -i ~/.ssh/$1.pem getInstancesInfo:$1 connectToMaster formatNameNode
+
+

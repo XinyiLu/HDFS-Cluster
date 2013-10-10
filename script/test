@@ -1,0 +1,4 @@
+#!/bin/bash
+echo $1
+fab -i "~/.ssh/$1.pem" getHostNames
+
